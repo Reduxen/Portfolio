@@ -52,7 +52,7 @@ function detectDevice() {
 
 let slideIndex = 1;
 
-function moveSlideshow(n) {
+function moveSlides(n) {
   showSlides(slideIndex += n);
 }
 
