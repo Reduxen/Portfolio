@@ -1,0 +1,30 @@
+.banner{
+    max-width: var(--max-width);
+    margin: 0 auto;
+    border-radius: 12px;
+  }
+
+  .embed{
+    border-radius: 12px;
+  }
+
+  .flex-container {
+    display: flex;
+    gap: 20px; /* Space between columns */
+  }
+  
+  .flexbox {
+    flex: 1;
+    background-color: var(--surface-color);
+    border-radius: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+  }
+  
+  .title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #a0c4ff;
+  }

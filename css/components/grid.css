@@ -1,0 +1,65 @@
+@keyframes slideFadeIn {
+    from { 
+      opacity: 0;
+    }
+    to { 
+      opacity: 1;
+    }
+  }
+
+.grid-personal {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: var(--max-width);
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+.grid-professional {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    max-width: var(--max-width);
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  .grid-item {
+    background-color: #2a2a2a;
+    border-radius: 12px;
+    overflow: hidden;
+    color: #fff;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    animation: slideFadeIn 1s ease-out forwards;
+  }
+  
+  .grid-item img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .grid-item-content {
+    padding: 1rem;
+  }
+  
+  .grid-item-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #a0c4ff;
+  }
+  
+  .grid-item-description {
+    font-size: 1rem;
+    color: #ccc;
+  }
+  
+ #clickable:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+  }

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reduxen</title>
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="header-content">
+      <div class="header-title">Reduxen</div>
+      <nav class="nav">
+        <a href="#home" data-page="home" id="home-btn">Home</a>
+        <a href="#professional" data-page="professional" id="professional-btn">Professional Work</a>
+        <a href="#personal" data-page="personal" id="personal-btn">Personal Projects</a>
+        <a href="#contact" data-page="contact" id="contact">Contact</a>
+      </nav>
+      <div class="dropdown">
+        <button class= "dropbtn">☰</button>
+        <div class="dropdown-content">
+          <a href="#">Home</a>
+          <a href="#">Professional Work</a>
+          <a href="#">Personal Projects</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+    <!-- Page content will load here -->
+  </main>
+
+  <div class="lightbox" id="lightbox">
+    <span class="close" onclick="closeLightbox()">×</span>
+    <img id="lightbox-img" src="">
+    <a class="lightbox-prev" onclick="moveLightbox(-1)">&#10094;</a>
+    <a class="lightbox-next" onclick="moveLightbox(1)">&#10095;</a>
+  </div>
+
+  <footer>
+    &copy; 2025 My Portfolio. All rights reserved.
+  </footer>
+
+  <script src="/scripts/utils.js"></script>
+  <script src="/scripts/pages/personal.js"></script>
+  <script src="/scripts/main.js"></script>
+
+</body>
+</html>
