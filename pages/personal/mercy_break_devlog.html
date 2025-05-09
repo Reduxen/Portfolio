@@ -1,0 +1,182 @@
+<section class="page-container">
+    <img src="/images/mercy_break/banner.png" alt="Thumbnail" class="banner" />
+
+    <div class="container" style="padding-top: 0.3rem;">
+        <p class="title" style="font-size: 32px;">Devlog</p>
+        <p>
+            Mercy Break was my second game project using Unreal Engine 4 and my most ambitious solo project so far.
+            I went through most of the game development cycle while working on this project, since I wanted to build as
+            many things from the ground up as possible.
+            I not only learned UE4 and Blueprints, but also modelling, sculpting, rigging and texturing, learned
+            valuable lessons in UI & UX and learned about networking & the Steam API.
+        </p>
+        <h2>A Solid Start</h2>
+        <div class="flexcontainer">
+            <div>
+                <p>I went into this project knowing I wanted to make a 3rd person shooter similar to others in the
+                    Battle Royal Genre,
+                    but with local lobbies, as to be able to play against your friends.
+                    The lobbies were also supposed to be customizable, so you could change most parameters of the game.
+                </p>
+                <p>I kicked the project off around 2016-2017 by adding very basic Networking capabilities to the 3rd
+                    person template from UE4, using the Steam-API and Blueprints.
+                    Once multiplayer was working and my friends could join the server over Steam, I added a character
+                    model and some weapons.
+                </p>
+                <p>
+                    I created a naked (but family friendly!) high poly model for the player character.
+                    For my first ever time sculpting, I think it turned out pretty well!
+                    Once I had the model retopologized, clothed and unwrapped, I added textures in Substance Painter.
+                    Eventually I got the character rigged and working with Unreal's 3rd person character.
+                    I used an anim set I found online for the animations.
+                </p>
+            </div>
+            <img src="/images/mercy_break/devlog/assets_character.png" title="Hi Poly Character Model" class="pic"
+                style="height: 450px;" onclick="openLightboxSimple(this)">
+            <div class="sketchfab-embed-wrapper"> <iframe title="MercyBreak - Character" class="sketchfab-embed"
+                    style="height: 450px; width: 300px; margin-left: 0;" frameborder="0" allowfullscreen
+                    mozallowfullscreen="true" webkitallowfullscreen="true"
+                    allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
+                    execution-while-out-of-viewport execution-while-not-rendered web-share
+                    src="https://sketchfab.com/models/064aa8bfb3c9452d99c8616a34d33937/embed?ui_theme=dark"> </iframe>
+            </div>
+        </div>
+        <p>With that in place, weapons were next. After adding some basic Blueprint logic I went on to create some
+            weapon models in Blender:</p>
+        <div class="flexcontainer" style="justify-content: space-between;">
+            <div class="sketchfab-embed-wrapper"> <iframe title="MercyBreak - Character" class="sketchfab-embed"
+                    frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
+                    allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
+                    execution-while-out-of-viewport execution-while-not-rendered web-share
+                    src="https://sketchfab.com/models/8b71b46beb66473d8f1f9d34dca2348e/embed?ui_theme=dark"> </iframe>
+            </div>
+            <div class="sketchfab-embed-wrapper"> <iframe title="MercyBreak - Character" class="sketchfab-embed"
+                    frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
+                    allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
+                    execution-while-out-of-viewport execution-while-not-rendered web-share
+                    src="https://sketchfab.com/models/f6c7b7e6ebb34c4f907ceda13ca7f2cc/embed?ui_theme=dark"> </iframe>
+            </div>
+            <div class="sketchfab-embed-wrapper"> <iframe title="MercyBreak - Character" class="sketchfab-embed"
+                    frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true"
+                    allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking
+                    execution-while-out-of-viewport execution-while-not-rendered web-share
+                    src="https://sketchfab.com/models/a1cbadf94a344409940ab5e7fcc4f455/embed?ui_theme=dark"> </iframe>
+            </div>
+        </div>
+        <p>
+            With the addition of a simple system for the loot, a whitebox level and some friends the game could be
+            tested at this point.
+            Playtesting early on was important for me, that way I could figure out metrics for the level and also adjust
+            balance as we go.
+        </p>
+        <div class="flexcontainer">
+            <img src="/images/mercy_break/devlog/level_testlevel2.jpg" title="An early whitebox level" class="pic"
+                onclick="openLightboxSimple(this)">
+            <img src="/images/mercy_break/devlog/level_testlevel3.jpg" title="A whitebox level later in development"
+                class="pic" onclick="openLightboxSimple(this)">
+        </div>
+
+        <h2>Building the Game</h2>
+        <div class="flexcontainer">
+            <p>
+                With the framework in place, it came to producing the rest of the game.
+                I redesigned the entire UI to be modern, slick-ish and added a drag and drop inventory system.
+                The inventory system would serve to loot/buy equipment, see weapon statistics, heal oneself or drop
+                explosives.
+                Getting the inventory working with networking, while multiple players could access the same lootbox was
+                probably the most challenging part of this project.
+            </p>
+            <img src="/images/mercy_break/devlog/inventory.png" title="Inventory" class="pic"
+                onclick="openLightboxSimple(this)">
+        </div>
+
+        <div class="flexcontainer">
+            <div>
+                <p>
+                    Now it came to building the level. For the foliage I used assets from the asset store.
+                    Every other asset you see is done in Blender and textured in Substance Painter.
+                    I created different sets of models for various parts of the game, such as furniture, street
+                    accessoires, construction site, etc.
+                </p>
+                <p>
+                    To build the buildings, I split walls into 3x3m sections.
+                    I created various modular models in Blender and used Unreal's construction scripts to create a
+                    flexible, modular system.
+                    You can build windows, doors, roofs, pillars, etc.
+                    Special measures were taken to ensure that there was
+                    absolutely no z-fighting. Once a building was done it was saved as a static mesh. I then added
+                    furniure and spawn
+                    points for the loot and saved everything in a Blueprint.
+                </p>
+                <p>Now you could just choose a building and drag and
+                    drop it into the scene. Amazing!</p>
+            </div>
+            <img src="/images/mercy_break/devlog/system_buildings.gif" title="Building System" class="pic"
+                onclick="openLightboxSimple(this)">
+        </div>
+
+        <p>Here are some of the buildings I constructed using this sytem:</p>
+        <div class="flexcontainer">
+            <img src="/images/mercy_break/devlog/building_1.png" title="Building 1" class="pic"
+            onclick="openLightboxSimple(this)">
+            <img src="/images/mercy_break/devlog/building2.png" title="Library Building" class="pic"
+            onclick="openLightboxSimple(this)">
+        </div>
+        <div class="flexcontainer">
+            <img src="/images/mercy_break/devlog/interior.png" title="Library Building" class="pic"
+            onclick="openLightboxSimple(this)">
+            <img src="/images/mercy_break/devlog/building_library.jpg" title="Library Building" class="pic"
+            onclick="openLightboxSimple(this)">
+        </div>
+
+        <h2>The future</h2>
+        <div class="flexcontainer">
+            <p>
+                While I do consider this project done, there were some Updates in development which never saw the light of day.
+                The biggest update to the game being a co-op zombie mode. You can play it with 1-8 players and face waves of zombie hordes swarming your settlement.
+                It comes with a new map called 'Mercy Settlement', a barricaded settlement facing extinction because of the zombies.
+                There are three enemy types: The Grunt, The Sprinter and The Armored, which will shoot at you!
+                To better defend yourself I also added a new weapon! A semi-auto shotgun.
+            </p>
+            <img src="/images/mercy_break/devlog/update_zombies.jpg" title="Inventory" class="pic"
+                onclick="openLightboxSimple(this)">
+        </div>
+
+        <div class="flexcontainer">
+            <p>
+                Trough competing in the zombie mode you earn credits, which you can then spend on customization options.
+                You can customize you character and your weapons. I added a shop UI to the game where you can preview, purchase and equip cosmetic items.
+            </p>
+            <img src="/images/mercy_break/devlog/update_shop_character.png" title="Inventory" class="pic"
+                onclick="openLightboxSimple(this)">
+        </div>
+
+    </div>
+
+    <div class="container">
+        <h2>Made with</h2>
+        <hr>
+        <div class="tools-container">
+            <div class="tool-container">
+                <img src="/images/logos/unreal_logo.png" class="logo">
+                <h1>Unreal Engine</h1>
+            </div>
+            <div class="tool-container">
+                <img src="/images/logos/blender_logo.png" class="logo">
+                <h1>Blender</h1>
+            </div>
+            <div class="tool-container">
+                <img src="/images/logos/substance_logo.png" class="logo">
+                <h1>Substance Painter</h1>
+            </div>
+            <div class="tool-container">
+                <img src="/images/logos/gimp_logo.png" class="logo">
+                <h1>Gimp</h1>
+              </div>
+            <div class="tool-container">
+                <img src="/images/logos/audacity_logo.png" class="logo">
+                <h1>Audacity</h1>
+            </div>
+        </div>
+
+</section>

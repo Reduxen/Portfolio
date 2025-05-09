@@ -1,0 +1,128 @@
+<section class="page-container">
+    <img src="/images/shimmer_of_light/banner.png" alt="Thumbnail" class="banner" />
+
+    <div class="container" style="padding-top: 0.3rem;">
+        <p class="title" style="font-size: 32px;">Devlog</p>
+        <p>Inspired by platformers like Celeste, the idea behind Shimmer Of Light was to make a responsive, quick pace
+            platformer with a high skill ceiling. With one special ability that would allow interesting interactions
+            between mechanics. Right away from the start it was certain that this ability would be to bring background
+            elements to the foreground to use them as platforms. Unity was chosen for this project, becuase of its great
+            support for 2D projects. </p>
+
+        <h2>Movement</h2>
+        <div class="flexcontainer">
+            <div>
+                <p>Naturally, with such a game, movement was the first thing to get right. I started with some basic
+                    character animations, since I wanted to have a visual anchor while programming the movement. With
+                    that
+                    done I started the actual movement code. While Unity's rigidbody is great, I find it very
+                    unsatisfying
+                    for movement. Because of this I avoided using forces and instead set the velocity of the character
+                    directly, which meant acceleration had to be finely controlled via code. I also programmed my own
+                    air
+                    drag and friction, since Unity's solution didn't give me enough control. This lead me to a movement
+                    system which I could adjust very finely. </p>
+                <p>Some measures were also taken to support the player:</p>
+                <ul>
+                    <li>The charcters jump is executed even if the player pressed the button a few ms before landing.
+                    </li>
+                    <li>A boost jump is also done if the player pressed the jump button even after a platform stopped
+                        moving</li>
+                    <li>And if the player switches the daytime, while simultaneously jumping the two actions are
+                        executed in the
+                        right order, which allows jumping out of a 2 block high dirt prison (this is a high skill level
+                        move and
+                        is not necessary to complete the game, only for collectibles).</li>
+                </ul>
+            </div>
+            <img src="/images/shimmer_of_light/devlog/movement.gif"
+                title="The responsive movement allows for fun level design!" class="pic"
+                onclick="openLightboxSimple(this)" height="315px" width="560px">
+        </div>
+
+        <h2>The camera dilemma</h2>
+        <div class="flexcontainer">
+            <div>
+                <p>One of the earlier problems I encountered is where the camera should go. The game is fairly far
+                    zoomed in, which doesn't leave much space for the intended fast paced platforming. A simple solution
+                    would be to contain every level to a single screen. This , however, would feel claustrophobic and
+                    would have restricted the level design greatly. Another simple solution would be to just have the
+                    camera follow the player . This unfortunately leads to a number of problems: The level designer
+                    would never know what the player actually sees, since the player could be anywhere, which hinders
+                    the level designer to lead the player to the exit or the solution. Another problem with this is that
+                    platforming is really hard and feels inconsistend with a moving camera.</p>
+                <p>So I opted for a hybrid solution, which is also very flexible for level iteration: The levels are
+                    contained in a screen box which has a set size. The camera can move freely in said screen boxes, but
+                    tries to keep the player centered . This was a great solution, in level design you always know where
+                    the camera will be and you have the flexibility to create long, big levels. Additionaly camera
+                    smoothing was implemented. This gives greater orientation, especially when moving between screen
+                    boxes</p>
+            </div>
+            <img src="/images/shimmer_of_light/devlog/camera.png" title="Screen boxes in Unity editor" class="pic"
+                onclick="openLightboxSimple(this)">
+        </div>
+
+        <h2>Levels</h2>
+        <div class="flexcontainer">
+            <div>
+                <p>One of the earliest sketches for a level was a very simple idea. A level containing glass and dirt
+                    tiles.
+                    The dirt tiles would have their collisions
+                    enabled at night and the glass tiles have their collision enabled at day. This makes the player have
+                    to not only jump precisely, but also switch the daytime at the right moment. </p>
+                <p>There is one problem with levels like this one: It is way too hard for a beginner. So I made a list
+                    of all the mechanics and interactions between them and rated them on how hard they were. Based on
+                    that rating, I crafted levels which would teach the player each skill they needed chronologically.
+                    Each mechanic is introduced slowly and with a low risk of death, so that the player can experiment.
+                    Then the mechanic is explored and first interactions with other mechanics are introduced. Lastly the
+                    player's skills are tested with a high risk vs reward. This feels great and based on playtesters
+                    experiences it feels rewarding, which is exactly what I had in mind.</p>
+            </div>
+            <img src="/images/shimmer_of_light/devlog/levels.png" title="Screen boxes in Unity editor" class="pic"
+                onclick="openLightboxSimple(this)">
+        </div>
+
+        <h2>Happy Accidents</h2>
+        <div class="flexcontainer">
+            <div>
+                <p>Unity's 2D collision system just prevents any rigidbody to cross its outline, which means you can
+                    enter the collision volume and move inside of it. I could have just killed the player once that
+                    happened, but this would be very annoying and unituitive to play. So I left it in place and
+                    integrated it into the game. This lead to some interesting levels where the playing person has to
+                    switch up his approach to the game. It also brought about my favourite mechanic; The dirt prision as
+                    mentioned above.</p>
+                <p>To be able to escape such a prision some extra measures had to be taken in the movement code, as
+                    explained above. With the extra measures taken to ensure consistenty when jumping out of a dirt
+                    prision, this also was integrated into the game. These are optional and not part of the main game,
+                    but are great for veteran platformers and speedrunners alike.</p>
+            </div>
+            <img src="/images/shimmer_of_light/devlog/box.png" title="Box Prison" class="pic"
+                onclick="openLightboxSimple(this)">
+        </div>
+
+
+    </div>
+
+    <div class="container">
+        <h2>Made with</h2>
+        <hr>
+        <div class="tools-container">
+            <div class="tool-container">
+                <img src="/images/logos/unity_logo.png" class="logo">
+                <h1>Unity</h1>
+            </div>
+            <div class="tool-container">
+                <img src="/images/logos/csharp_logo.png" class="logo">
+                <h1>C#</h1>
+            </div>
+            <div class="tool-container">
+                <img src="/images/logos/aseprite_logo.png" class="logo">
+                <h1>Aseprite</h1>
+            </div>
+            <div class="tool-container">
+                <img src="/images/logos/audacity_logo.png" class="logo">
+                <h1>Audacity</h1>
+            </div>
+        </div>
+
+</section>

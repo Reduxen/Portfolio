@@ -1,4 +1,67 @@
-<section class="container">
-    <h1>Fractal Explorer</h1>
-    <p>This is home</p>
-  </section>
+<section class="page-container">
+  <h1>Fractal Explorer VR</h1>
+  <hr>
+  <div class="dual-grid">
+    <div class="container">
+      <div class="content">
+        <p>Fractal Explorer VR lets you easily visualize, manipulate and navaigate various 3D fractals in a VR space.
+          You can choose from 9 unique fractals formulas, such as the julia-set or the mandelbrot-set.
+          There are also 6 presets which put a spin on the fractal, like different colors or parameters.
+          4 additional animations bring some life into the otherwise static fractals. Just lean back and enjoy, as the Fractals
+          morph and move.
+        </p>
+        <img src="/images/fractal_explorer_vr/menu.png" title="Main Menu" class="pic"
+          onclick="openLightboxSimple(this)">
+        <p>
+          With Fractal Explorer VR I wanted to give as much control over the Fractals as possible, while also not having
+          overcomplicated menus. To acheive this I created a 3D menu seperated into 3 sections: General, Fractal and
+          Color. This lets the menu be less cluttered. Only one of these sections is presented to the user at a time and
+          the active section can be switched by rotating the menu around your hand.
+        </p>
+        <div class="flexcontainer">
+          <p>One special feature in the fractal menu is that you can select parameters by clicking at them with your laser pointer and then change them with your
+            controller's joystick. This makes fine tuning and smooth transitions possible. The selected parameter is
+            highligted in blue.</p>
+            <img src="/images/fractal_explorer_vr/controls.png" title="3D Rotary Menu" class="pic" height="250px"
+          onclick="openLightboxSimple(this)">
+        </div>
+        <div class="links">
+          <h2 style="color: rgb(245, 107, 107);">Download:</h2>
+          <a href="https://reduxen.itch.io/fractal-explorer-vr">
+              <img src="/images/logos/itch.io_logo.png" class="button-download">
+          </a>
+      </div>
+      </div>
+    </div>
+    <div class="container">
+      <p class="title">Screenshots</p>
+      <div class="slideshow-container">
+
+        <div class="mySlides">
+          <div class="numbertext" id="slideshow-index">1 / 9</div>
+          <img src="/images/fractal_explorer_vr/screenshot1.png" style="width:100%" class="embed" id="slideshow"
+            onclick="openLightbox(this)">
+        </div>
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="moveSlides(-1)">&#10094;</a>
+        <a class="next" onclick="moveSlides(1)">&#10095;</a>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="container">
+    <h2>Made with</h2>
+    <hr>
+    <div class="tools-container">
+      <div class="tool-container">
+        <img src="/images/logos/unity_logo.png" class="logo">
+        <h1>Unity</h1>
+      </div>
+      <div class="tool-container">
+        <img src="/images/logos/hlsl_logo.png" class="logo">
+        <h1>HLSL</h1>
+      </div>
+    </div>
+
+</section>
