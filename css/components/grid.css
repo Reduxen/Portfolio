@@ -26,7 +26,7 @@
   }
   
   .grid-item {
-    background-color: #2a2a2a;
+    background-color: var(--surface-color);
     border-radius: 12px;
     overflow: hidden;
     color: #fff;
@@ -35,6 +35,10 @@
     flex-direction: column;
     text-decoration: none;
     animation: slideFadeIn 1s ease-out forwards;
+  }
+
+  .grid-professional .grid-item{
+    margin-bottom: 0.4rem;
   }
   
   .grid-item img {
@@ -49,12 +53,28 @@
   .grid-item-title {
     font-size: 1.2rem;
     font-weight: bold;
-    margin-bottom: 0.5rem;
-    color: #a0c4ff;
+    margin-bottom: 0.4rem;
+    color: var(--primary-color);
+  }
+
+  .pro-grid-item-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 0.6rem;
+    margin-bottom: 0;
+    color: var(--primary-color);
   }
   
   .grid-item-description {
     font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 0.2rem;
+  }
+
+  .grid-item-date {
+    font-size: 1.2rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0;
     color: #ccc;
   }
   
@@ -63,3 +83,8 @@
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
     cursor: pointer;
   }
+
+.grid-item .flexbox{
+  display: flex;
+  flex-direction: row;
+}

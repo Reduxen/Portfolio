@@ -11,44 +11,55 @@
   }
 
   .lightbox img {
+    border-radius: 12px;
+    box-shadow: 0 0 20px #000;
     max-width: 90%;
     max-height: 80%;
-    border-radius: 10px;
-    box-shadow: 0 0 20px #000;
   }
 
-  .lightbox .close {
+  .lightbox-close {
     position: absolute;
-    top: 20px; right: 30px;
     color: white;
-    font-size: 30px;
+    font-size: 50px;
     cursor: pointer;
     font-weight: bold;
+    right: 1rem;
+    top: 5rem;
   }
 
   /* Next & previous buttons */
   .lightbox-prev, .lightbox-next {
     cursor: pointer;
     position: absolute;
-    top: 50%;
     width: auto;
-    padding: 16px;
-    margin-top: -22px;
+    padding: 25px;
     color: white;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 24px;
     transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
     user-select: none;
+    background-color: rgba(255, 255, 255, 0.1);
   }
   
-  /* Position the "next button" to the right */
+  .lightbox-prev {
+    border-radius: 0 6px 6px 0;
+    left: 0%;
+  }
+
   .lightbox-next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
+    border-radius: 6px 0 0 6px;
+    right: 0%;
   }
   
   /* On hover, add a black background color with a little bit see-through */
   .lightbox-prev:hover, .lightbox-next:hover {
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(255, 255, 255, 0.5);
   }
+
+#lightbox-description{
+  position: absolute;
+  bottom: 0;
+  padding: 1rem;
+  font-size: 18px;
+  font-style: italic;
+}
