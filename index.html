@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Reduxen</title>
+  <title>Raphael Grautstück</title>
   <link rel="icon" href="images/favicon.png" type="image/png" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
   <header class="header">
     <div class="header-content">
-      <div class="header-title">Reduxen</div>
+      <div class="header-logo" onclick="loadHTML('#content', `pages/home.html`);">
+        <div class="header-title">Raphael Grautstück</div>
+      </div>
       <nav class="nav">
         <a href="#home" data-page="home" id="home-btn">Home</a>
-        <a href="#professional" data-page="professional" id="professional-btn">Professional Work</a>
+        <a href="#professional" data-page="professional" id="professional-btn">Experience</a>
         <a href="#personal" data-page="personal" id="personal-btn">Personal Projects</a>
         <a href="#contact" data-page="contact" id="contact">Contact</a>
       </nav>
       <div class="dropdown">
-        <button class= "dropbtn">☰</button>
+        <button class="dropbtn">☰</button>
         <div class="dropdown-content">
           <a href="#">Home</a>
           <a href="#">Professional Work</a>
@@ -34,19 +38,22 @@
   </main>
 
   <div class="lightbox" id="lightbox">
-    <span class="close" onclick="closeLightbox()">×</span>
+    <span class="close" onclick="closeLightbox()"></span>
     <img id="lightbox-img" src="">
-    <a class="lightbox-prev" onclick="moveLightbox(-1)">&#10094;</a>
-    <a class="lightbox-next" onclick="moveLightbox(1)">&#10095;</a>
+    <a class="lightbox-prev" id="lightbox-prev" onclick="moveSlides(-1)">&#10094;</a>
+    <a class="lightbox-next" id="lightbox-next" onclick="moveSlides(1)">&#10095;</a>
+    <a class="lightbox-close" onclick="closeLightbox()">x</a>
+    <p id="lightbox-description">Test</p>
   </div>
 
   <footer>
-    &copy; 2025 My Portfolio. All rights reserved.
+    &copy; 2025 Raphael Grautstück. All rights reserved.
   </footer>
 
-  <script src="/scripts/utils.js"></script>
   <script src="/scripts/pages/personal.js"></script>
+  <script src="/scripts/components/image_viewer.js"></script>
   <script src="/scripts/main.js"></script>
 
 </body>
+
 </html>
